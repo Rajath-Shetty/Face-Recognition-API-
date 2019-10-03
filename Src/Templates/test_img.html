@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image</title>
+     <style>
+    .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    }
+    .b1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4DAF50;
+    }
+
+    .b1:hover {
+    background-color: #4DAF50;
+    color: white;
+    }
+
+    .b2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #108CBA;
+    }
+
+    .b2:hover {
+    background-color: #008CBA;
+    color: white;
+    }
+
+    </style>
+<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+        function show(){
+            document.getElementById("test").innerHTML="Testing...";
+        }
+    </script>
+</head>
+<body>
+   <form action="http://localhost:5000/test_img" method="post" enctype="multipart/form-data">
+        <center><strong> <h1>Upload new File</h1></strong></center><br><b><br><br>
+         <div align="center">
+         <input type="file" name="file" class="button b1">
+     </div><br>
+     <div align="center">
+         <input type="submit" value="Upload" onclick="show();" class="button b2">
+     </div>
+          <p id="test"></p>
+         <img src="{{ file }}" width=1080 height= 700 alt="">
+    </form>
+</body>
+</html>
